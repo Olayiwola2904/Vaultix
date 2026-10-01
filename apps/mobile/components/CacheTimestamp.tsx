@@ -1,5 +1,6 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, StyleSheet } from "react-native";
+import { colors } from '../theme';
 
 type Props = {
   timestamp?: number;
@@ -8,15 +9,21 @@ type Props = {
 export default function CacheTimestamp({
   timestamp,
 }: Props) {
-
   if (!timestamp) return null;
 
-  const formatted =
-    new Date(timestamp).toLocaleString();
+  const formatted = new Date(timestamp).toLocaleString();
 
   return (
-    <Text className="text-xs text-neutral-500 mt-2">
+    <Text style={styles.text}>
       Last updated: {formatted}
     </Text>
   );
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 12,
+    color: colors.textSecondary,
+    marginTop: 8,
+  },
+});
