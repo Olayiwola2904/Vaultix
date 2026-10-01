@@ -1,1 +1,0 @@
-import{Tabs}from'expo-router';import{Home,Bell,Plus}from'lucide-react-native';export default()=><Tabs>{[['index',Home],['notifications',Bell],['create',Plus]].map(([n,I])=><Tabs.Screen key={n} name={n} options={{tabBarIcon:({color,size})=><I color={color} size={size}/>}}/>)}</Tabs>;
